@@ -24,9 +24,6 @@ public class Fixo extends Funcionario {
 		setRemuneracaoFinal(valorTotal);
 	}
 	
-
-	
-
 	@Override
 	public String toString() {
 		return "Nome: "+getNome()

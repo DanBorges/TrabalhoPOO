@@ -60,7 +60,7 @@ public class Main {
 				String input = in.nextLine();
 				op = Integer.parseInt(input);
 
-				if(op == 1 ||op == 2 || op == 3 || op == 4 || op == 5){
+				if(op == 1 ||op == 2 || op == 3 || op == 4 || op == 5) {
 					entradaValida = true;
 					String cpf,nome,telefone,email;
 					if(op==1){
@@ -77,10 +77,7 @@ public class Main {
 							System.out.println("Informe o salário base do Funcionário");
 							salario=in.nextInt();
 						
-							Funcionario funcionario = new Fixo(cpf,nome, telefone, email, salario);
-							
-							funcionario.calcularRemuneracao(imobiliaria.buscarContratosPorCpf(cpf));
-							
+							Funcionario funcionario = new Fixo(cpf,nome, telefone, email, salario);							
 							imobiliaria.adicionarFuncionario(funcionario);
 							listaFuncionario.add(funcionario);
 
@@ -239,6 +236,9 @@ public class Main {
 						
 					}
 				}
+				else{
+					throw new Exception("A Entrada é Invalida");
+				}
 			}
 
 			catch(Exception e){
@@ -346,6 +346,9 @@ public class Main {
 							System.out.println(imobiliaria.imprimirContratos(numero));
 						}
 					}
+				}
+				else{
+					throw new Exception("A Entrada é Invalida");
 				}
 			}
 
