@@ -19,7 +19,7 @@ public class Fixo extends Funcionario {
 		double valorTotal = 0;
 		for(Contrato c:listaContrato){
 			valorTotal = valorTotal + getSalarioBase()+
-				(c.getValorMensalAluguel()*(0.01));
+			(c.getValorMensalAluguel()*(0.01));
 		}
 		setRemuneracaoFinal(valorTotal);
 	}

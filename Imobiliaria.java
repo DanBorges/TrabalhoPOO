@@ -12,10 +12,13 @@ public class Imobiliaria {
 	private ArrayList<Contrato> listaContrato;
 
 
+
+
 	public Imobiliaria() {
 		this.listaFuncionario = new ArrayList<Funcionario>();
 		this.listaImovel = new ArrayList<Imovel>();
 		this.listaContrato = new ArrayList<Contrato>();
+
 	}
 	
 	public void adicionarFuncionario(Funcionario funcionario){
@@ -106,12 +109,11 @@ public class Imobiliaria {
 	}
 	
 	public ArrayList<Contrato> buscarContratosPorCpf(String id){
-		ArrayList<Contrato> listaContratoPorCpf = new ArrayList<Contrato>();
+		
 		for(Contrato c: listaContrato){
 			if(c.getFuncionario().getCpf().equals(id)){
-				listaContratoPorCpf.add(c);
+				return listaContrato;
 			}
-			return listaContratoPorCpf;
 		}
 		return null;
 	}

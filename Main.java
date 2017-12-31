@@ -13,7 +13,6 @@ public class Main {
 	public static int carregarMenuPrincipal(Scanner in){
 		System.out.println("----------------------------------------------Imobiliaria----------------------------------------------");
 		
-
 		boolean entradaValida=false;
 		int op=4;
 		

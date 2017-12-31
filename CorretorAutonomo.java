@@ -27,8 +27,8 @@ public class CorretorAutonomo extends Funcionario {
 		
 		double valorTotal = 0;
 		for(Contrato c:listaContrato){
-			valorTotal = valorTotal + 
-						(c.getValorMensalAluguel()*(getTaxaComissao()/100));
+			System.out.println(c.getValorMensalAluguel());
+			valorTotal = valorTotal + c.getValorMensalAluguel()*(getTaxaComissao()/100) ;
 		}
 		setRemuneracaoFinal(valorTotal);
 	}
