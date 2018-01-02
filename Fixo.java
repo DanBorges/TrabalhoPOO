@@ -2,6 +2,11 @@ package br.dcc.ufla.poo.sistemaAlugueisImvoves;
 
 import java.util.ArrayList;
 
+/**
+ * 
+ * Classe responsável por definir atributos e métodos de funcionários fixos
+ *
+ */
 public class Fixo extends Funcionario {
 	private double salarioBase;
 	
@@ -10,10 +15,21 @@ public class Fixo extends Funcionario {
 		this.salarioBase = salarioBase;
 	}
 
+	/**
+	 * 
+	 * @return slarioBase 
+	 * valor double específico da classe Fixo
+	 */
 	public double getSalarioBase() {
 		return salarioBase;
 	}
 
+	/**
+	 * param listaContrato uma lista já filtrada somente pelo cpf do funcionário passado como parâmetro na classe imobiliária
+	 * Para o funcionário fixo é feito a fórmula so seu salário base (entrada)+ quantidade do valor contratos fechados
+	 * pelo funcionário * 1%
+	 * Altera o valor do atributo genérico remuneracaoFinal
+	 */
 	@Override
 	public void calcularRemuneracao(ArrayList<Contrato> listaContrato) {
 		double valorTotal = 0;
@@ -24,6 +40,9 @@ public class Fixo extends Funcionario {
 		setRemuneracaoFinal(valorTotal);
 	}
 	
+	/**
+	 * Sobresecreve o método toString
+	 */
 	@Override
 	public String toString() {
 		return "Nome: "+getNome()
