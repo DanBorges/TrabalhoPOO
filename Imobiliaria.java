@@ -53,7 +53,8 @@ public class Imobiliaria {
 	/**
 	 * 
 	 * @param id, Recebe como parâmetro o id do funcionário (no caso CPF)
-	 * @return funcionario, caso ache o funcionário pelo seu cpf retorna o objeto, senão retorna null
+	 * @return funcionario 
+	 * Caso ache o funcionário pelo seu cpf retorna o objeto, senão retorna null
 	 */
 	public Funcionario buscarFuncionario(String id){
 		for(Funcionario funcionario:listaFuncionario){
@@ -68,7 +69,8 @@ public class Imobiliaria {
 	/**
 	 * 
 	 * @param id, Recebe como parâmetro o id do funcionário fixo (no caso CPF)
-	 * @return funcionario, caso ache o funcionário fixo pelo seu cpf retorna o objeto, senão retorna null
+	 * @return funcionario
+	 * Caso ache o funcionário fixo pelo seu cpf retorna o objeto, senão retorna null
 	 */
 	public Funcionario buscarFuncionarioFixo(String id){
 		for(Funcionario funcionario:listaFuncionario){
@@ -85,7 +87,8 @@ public class Imobiliaria {
 	/**
 	 * 
 	 * @param id, Recebe como parâmetro o id do funcionário autônomo (no caso CPF)
-	 * @return funcionario, caso ache o funcionário autônomo pelo seu cpf retorna o objeto, senão retorna null
+	 * @return funcionario
+	 * Caso ache o funcionário autônomo pelo seu cpf retorna o objeto, senão retorna null
 	 */
 	public Funcionario buscarFuncionarioAutonomo(String id){
 		for(Funcionario funcionario:listaFuncionario){
@@ -102,7 +105,8 @@ public class Imobiliaria {
 	/**
 	 * 
 	 * @param idImovel, Recebe como parâmetro o id do imóvel
-	 * @return imovel, caso ache o imovel pelo seu id retorna o objeto, senão retorna null
+	 * @return imovel
+	 * caso ache o imovel pelo seu id retorna o objeto, senão retorna null
 	 */
 	public Imovel buscarImovel(int idImovel){
 		for(Imovel imovel:listaImovel){
@@ -148,7 +152,8 @@ public class Imobiliaria {
 	/**
 	 * 
 	 * @param idContrato, Recebe como parâmetro o id do Contrato
-	 * @return contrato, caso ache o contrato pelo seu id retorna o objeto, senão retorna null
+	 * @return contrato
+	 * Caso ache o contrato pelo seu id retorna o objeto, senão retorna null
 	 */
 	public Contrato buscarContratos(int idContrato){
 		for(Contrato contrato:listaContrato){

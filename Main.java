@@ -13,11 +13,11 @@ import br.dcc.ufla.poo.sistemaAlugueisImvoves.Imovel.Tipo;
  *
  */
 public class Main {
-	
+
 	/**
 	 * 
-	 * @param in
-	 * @return op
+	 * @param in,
+	 * @return
 	 * Método que carrega o menu principal, onde o usuário escolhe qual módulo vai acionar
 	 */
 	public static int carregarMenuPrincipal(Scanner in){
@@ -35,7 +35,7 @@ public class Main {
 			System.out.println("2. Módulo Imóvel");
 			System.out.println("3. Módulo Contrato");
 			System.out.println("4. Sair");
-			
+
 			/*Tenta Executar o bloco de comandos dentro de try*/
 			try{
 				String input = in.nextLine();
@@ -78,7 +78,7 @@ public class Main {
 			System.out.println("3. Exibir relatório de funcionario fixo");
 			System.out.println("4. Exibir relatório de funcionario Autônomo");
 			System.out.println("5. Voltar");
-			
+
 			/*Tenta Executar o bloco de comandos dentro de try*/
 			try{	
 				String input = in.nextLine();
@@ -102,7 +102,7 @@ public class Main {
 							email = in.next();
 							System.out.println("Informe o salário base do Funcionário");
 							salario=in.nextInt();
-							
+
 							/*Instancia funcionário como variável polimórfica para funcionário fixo*/
 							Funcionario funcionario = new Fixo(cpf,nome, telefone, email, salario);							
 							/*Adiciona o funcionário na lista de funcionários*/
@@ -130,7 +130,7 @@ public class Main {
 							email = in.next();
 							System.out.println("Informe a taxa de comissão em porcentagem(%) do Funcionário");
 							taxaComissao=in.nextDouble();
-							
+
 							/*Instancia funcionário como variável polimórfica para funcionário autônomo*/
 							Funcionario funcionario = new CorretorAutonomo(cpf,nome, telefone, email, taxaComissao);
 							/*Instancia funcionário como variável polimórfica para funcionário fixo*/
@@ -143,7 +143,7 @@ public class Main {
 							System.out.println("Já Existe um funcionário Comissionado com esse cpf");
 						}
 					}
-					
+
 					if(op==3){
 						String cpfPesquisa;
 						System.err.println("Informe o CPF do funcionário");
@@ -181,12 +181,12 @@ public class Main {
 			}
 			/*Caso haja algum erro é mostrado essa mensagem ao usuário*/
 			catch(Exception e){
-				System.out.println("Entrada Inváilida digite novamente \n");
+				System.out.println("Entrada Inváilida \n");
 			}
 
 		}
 	}
-	
+
 	/**
 	 * 
 	 * @param imobiliaria
@@ -216,36 +216,36 @@ public class Main {
 						String cidade,rua, bairro,complemento;
 						System.out.println("Informe a Cidade do Imóvel");
 						cidade = in.next();
-						
+
 						System.out.println("Informe a Rua do Imóvel");
 						rua = in.next();
-						
+
 						System.out.println("Informe o Bairro do Imóvel");
 						bairro = in.next();
-						
+
 						System.out.println("Informe o Complemento do Imóvel");
 						complemento = in.next();
-						
-						
+
+
 						/*Intancia objeto imóvel passando os atributos de  endereço para ser instânciado
 						 * dentro da classe Imovel*/
 						Imovel imovel = new Imovel(0,"", 0, 0,false, cidade,rua,bairro,complemento);
 						int idImovel;
 						String nomeProprietario;
 						Integer categoria,tipo;
-						
+
 						/*Para cada atributo lido de imóvel é setado o valor do imóvel*/
 						System.out.println("Informe o Id do Imóvel: ");
 						idImovel = in.nextInt();
 						imovel.setIdImovel(idImovel);
-						
+
 						System.out.println("Informe o Nome do proprietário: ");
 						nomeProprietario = in.next();
 						imovel.setNomeProprietario(nomeProprietario);
-						
+
 						System.out.println("Informe a categoria do Imóvel: 1-Residencial/2-Comercial/3-Misto ");
 						categoria = in.nextInt();
-						
+
 						/*Altera a categoria do imóvel se a categoria for residencial
 						 conforme o valor do enum definido na classe Imovel*/
 						if(categoria.equals(Categoria.RESIDENCIAL.getCodigo())){
@@ -261,22 +261,22 @@ public class Main {
 						if(categoria.equals(Categoria.MISTO.getCodigo())){
 							imovel.setCategoria(Categoria.MISTO.getCodigo());
 						}
-						
+
 						System.out.println("Informe tipo do Imóvel: 1-Apartamento/2-Casa ");
 						tipo = in.nextInt();
-						
+
 						/*Altera  tipo do imóvel se o tipo for casa
 						 conforme o valor do enum definido na classe Imovel*/
 						if(tipo.equals(Tipo.CASA.getCodigo())){
 							imovel.setTipo(Tipo.CASA.getCodigo());
 						}
-						
+
 						/*Altera  tipo do imóvel se o tipo for apartamento
 						 conforme o valor do enum definido na classe Imovel*/
 						if(tipo.equals(Tipo.APRTAMENTO.getCodigo())){
 							imovel.setTipo(Tipo.APRTAMENTO.getCodigo());
 						}
-						
+
 						/*Adiciona imóvel na lista de imóvel*/
 						imobiliaria.adicionarImovel(imovel);
 
@@ -289,10 +289,10 @@ public class Main {
 
 						System.out.println("Informea o tipo do Imóvel:1-Apartamento/2-Casa  ");
 						tipo = in.nextInt();
-						
+
 						/*Imprime os imóveis que são da mesma categoria e tipo, informados pelo usuário*/
 						imobiliaria.imprimirImovelPorCategoriaAndTipo(categoria,tipo);
-						
+
 					}
 				}
 				else{
@@ -300,10 +300,10 @@ public class Main {
 					throw new Exception("A Entrada é Invalida");
 				}
 			}
-			
+
 			/*Caso haja algum erro é mostrado essa mensagem ao usuário*/
 			catch(Exception e){
-				System.out.println("Entrada Inváilida digite novamente \n");
+				System.out.println("Entrada Inváilida \n");
 			}
 		}
 	}
@@ -336,7 +336,7 @@ public class Main {
 						int numero,duracao,idImovel;
 						double valorMensalAluguel,percentualImobiliaria;
 						String nomeFiador, nomeLocatario, cpfFuncionario;
-						
+
 						/*nstancia objeto do tipo contrato*/
 						Contrato contrato= new Contrato(null, null, null);
 						System.out.println("Informe o CPF do funcionário");
@@ -358,12 +358,19 @@ public class Main {
 							System.out.println("Não existe Nenhim Imóvel com esse ID");
 							return;
 						}
-						
+
 						else{
 							/*Para cada atributo lido de imóvel é setado o valor do imóvel*/
 							System.out.println("Informe o numero do contrato");
 							numero = in.nextInt();
 							contrato.setNumero(numero);
+							
+							/*Caso encontre um contrato com o mesmo número lido 
+							 exibe a mensagem Não Existe nenhum Imóvel com esse Id */
+							if(imobiliaria.buscarContratos(numero) != null){
+								System.out.println("Há existe um contrato com esse número");
+								return;
+							}
 
 							System.out.println("Informe a duração do contrato(meses)");
 							duracao = in.nextInt();
@@ -392,10 +399,10 @@ public class Main {
 							contrato = funcionario.gerarContrato(contrato,funcionario,imovel);
 							/*Adiciona o contrato na lista de contratos*/
 							imobiliaria.adicionarContrato(contrato);
-							
+
 							/*lista de contratos do cpf lido, recebida como retorno do método buscarContratosPorCpf*/
 							ArrayList<Contrato> listaContrato = imobiliaria.buscarContratosPorCpf(cpfFuncionario);
-							
+
 							/*Passa como parâmentro a lista de contratos do funcionário específico para calcuar
 							  sua remuneração*/
 							funcionario.calcularRemuneracao(listaContrato);
@@ -404,9 +411,7 @@ public class Main {
 
 							System.out.println("Contrato Firmado com sucesso");
 						}
-
 					}
-
 					if(op==2){
 						int numero;
 						System.out.println("Informe o numero do contrato");
@@ -430,7 +435,7 @@ public class Main {
 			}
 			/*Caso haja algum erro é mostrado essa mensagem ao usuário*/
 			catch(Exception e){
-				System.out.println("Entrada Inváilida digite novamente \n");
+				System.out.println("Entrada Inváilida\n");
 			}
 		}
 
@@ -438,8 +443,9 @@ public class Main {
 
 	/**
 	 * 
-	 * Função pricipal.
-	 * Carrega o menu principal e aguarda a ação do usuário
+	 *@param args
+	 *Função pricipal.
+	 *Carrega o menu principal e aguarda a ação do usuário
 	 */
 	public static void main(String[] args) {
 		/*Instancia objeto do tipo Imobiliaria*/
@@ -459,10 +465,10 @@ public class Main {
 			if(opPrincipal == 3){
 				carregarModuloContrato(imobiliaria);
 			}
-		
+
 		}while(opPrincipal != 4);
 		System.out.println("O sistema foi encerrado");
-		
+
 
 	}
 }
