@@ -133,7 +133,7 @@ public class Main {
 
 							/*Instancia funcionário como variável polimórfica para funcionário autônomo*/
 							Funcionario funcionario = new CorretorAutonomo(cpf,nome, telefone, email, taxaComissao);
-							/*Instancia funcionário como variável polimórfica para funcionário fixo*/
+							/*Instancia funcionário como variável polimórfica para funcionário autônomo*/
 							imobiliaria.adicionarFuncionario(funcionario);
 							System.out.println("Funcionário Comissionado Cadastrado com sucesso!!!");
 						}
@@ -368,7 +368,7 @@ public class Main {
 							/*Caso encontre um contrato com o mesmo número lido 
 							 exibe a mensagem Não Existe nenhum Imóvel com esse Id */
 							if(imobiliaria.buscarContratos(numero) != null){
-								System.out.println("Há existe um contrato com esse número");
+								System.out.println("Já existe um contrato com esse número");
 								return;
 							}
 
@@ -438,7 +438,6 @@ public class Main {
 				System.out.println("Entrada Inváilida\n");
 			}
 		}
-
 	}
 
 	/**

@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * Classe responsável por definir atributos e métodos de funcionários Corretor Autônomo
  *
  */
-public class CorretorAutonomo extends Funcionario {
+public class CorretorAutonomo extends Funcionario implements Tributavel {
 	public double taxaComissao;
 	
 	public CorretorAutonomo(String cpf, String nome, String telefone, String email, double taxaComissao) {
@@ -40,9 +40,26 @@ public class CorretorAutonomo extends Funcionario {
 		for(Contrato c:listaContrato){
 			valorTotal = valorTotal + c.getValorMensalAluguel()*(getTaxaComissao()/100) ;
 		}
+		double remuneracao = valorTotal;
+		valorTotal = valorTotal * (1- calculaPocentagemSidicato(remuneracao));
+		
 		setRemuneracaoFinal(valorTotal);
 	}
 	
+	@Override
+	public double calculaPocentagemSidicato(double remuneracao) {
+		if(remuneracao < 2000 ){
+			return 0;
+		}
+		if(remuneracao > 2000 && remuneracao < 5000 ){
+			return 0.1;
+		}
+		if(remuneracao > 5000 && remuneracao < 1000){
+			return 0.15;
+		}
+		return 0.2;
+	
+	}
 	
 	/**
 	 * Sobresecreve o método toString
@@ -56,6 +73,5 @@ public class CorretorAutonomo extends Funcionario {
 				+"\n"+ "CPF: "+getCpf()
 				+"\n"+ "Salário: "+ getRemuneracaoFinal();
 	}
-	
-	
+
 }

@@ -145,7 +145,6 @@ public abstract class Funcionario {
 	 * @return objeto do tipo imóvel que está vinculado no contrato pelo IdImovel
 	 */
 	public Contrato gerarContrato(Contrato contrato, Funcionario funcionario, Imovel imovel){
-		Imobiliaria imobiliaria = new Imobiliaria();
 		contrato = new Contrato(contrato, funcionario,imovel);
 		//A cada contrato fechado é incrementado o atributo numero de contratos fechados
 		funcionario.setNumeroContratosFechados(funcionario.getNumeroContratosFechados()+1);
