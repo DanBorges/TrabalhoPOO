@@ -29,7 +29,7 @@ public class CorretorAutonomo extends Funcionario implements Tributavel {
 
 
 	/**
-	 * param listaContrato uma lista já filtrada somente pelo cpf do funcionário passado como parâmetro 
+	 * @param listaContrato uma lista já filtrada somente pelo cpf do funcionário passado como parâmetro 
 	 * na classe imobiliária Para o funcionário Corretor Autônomo é feito a fórmula da quantidade do valor
 	 * contratos fechadospelo funcionário * taxa de comissao em %.
 	 * Altera o valor do atributo genérico remuneracaoFinal
@@ -45,20 +45,22 @@ public class CorretorAutonomo extends Funcionario implements Tributavel {
 		
 		setRemuneracaoFinal(valorTotal);
 	}
-	
+	/**
+	 *@param remuneracao com base na remuneração do funcionario será definido a porcentagem de juros
+	 *Retorna um valor que representa a porcentagem que será descontada na remuneração do funcionário 
+	 */
 	@Override
 	public double calculaPocentagemSidicato(double remuneracao) {
 		if(remuneracao < 2000 ){
 			return 0;
 		}
-		if(remuneracao > 2000 && remuneracao < 5000 ){
+		if(remuneracao >= 2000 && remuneracao < 5000 ){
 			return 0.1;
 		}
-		if(remuneracao > 5000 && remuneracao < 1000){
+		if(remuneracao >= 5000 && remuneracao < 10000){
 			return 0.15;
 		}
 		return 0.2;
-	
 	}
 	
 	/**

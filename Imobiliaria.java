@@ -121,13 +121,16 @@ public class Imobiliaria {
 	 * 
 	 * @param categoria,
 	 * @param tipo
+	 * @param cidade
 	 * Imprime as caracteristicas de um contrato, passado como parâmetro, senão encontrar imprime que
 	 * Não Existem Imóveis com esse tipo e categoria
 	 */
-	public void imprimirImovelPorCategoriaAndTipo(int categoria, int tipo){
+	public void imprimirImovelPorCategoriaAndTipoAndCidade(int categoria, int tipo, String cidade){
 		if(!listaImovel.isEmpty()){
 			for(int i=0;i<listaImovel.size();i++){
-				if(listaImovel.get(i).getCategoria() == categoria && listaImovel.get(i).getTipo()==tipo){
+				if(listaImovel.get(i).getCategoria() == categoria &&
+						listaImovel.get(i).getTipo() == tipo && 
+						listaImovel.get(i).getEndereco().getCidade().equals(cidade)){
 					System.out.println("Id Imóvel: "+listaImovel.get(i).getIdImovel());
 					System.out.println("Proprietário: "+ listaImovel.get(i).getNomeProprietario());
 					System.out.println("Cidade: "+listaImovel.get(i).getEndereco().getCidade());
@@ -140,10 +143,45 @@ public class Imobiliaria {
 					System.out.println("Tipo: "+Tipo.getDescricao(listaImovel.get(i).getTipo()));
 					System.out.println("Status: "+listaImovel.get(i).getStatus());
 				}
+				else{
+					System.out.println("Não Existem Imóveis com esse tipo e categoria e cidade");
+				}
 			}
 		}
-		else{
-			System.out.println("Não Existem Imóveis com esse tipo e categoria");
+	}
+	
+	/**
+	 * 
+	 * @param categoria,
+	 * @param tipo
+	 * @param cidade
+	 * @param bairro
+	 * Imprime as caracteristicas de um contrato, passado como parâmetro, senão encontrar imprime que
+	 * Não Existem Imóveis com esse tipo e categoria
+	 */
+	public void imprimirImovelPorCategoriaAndTipoAndCidadeAndBairro(int categoria, int tipo, String cidade, String bairro){
+		if(!listaImovel.isEmpty()){
+			for(int i=0;i<listaImovel.size();i++){
+				if(listaImovel.get(i).getCategoria() == categoria &&
+						listaImovel.get(i).getTipo() == tipo && 
+						listaImovel.get(i).getEndereco().getCidade().equals(cidade) &&
+						listaImovel.get(i).getEndereco().getBairro().equals(bairro)){
+					System.out.println("Id Imóvel: "+listaImovel.get(i).getIdImovel());
+					System.out.println("Proprietário: "+ listaImovel.get(i).getNomeProprietario());
+					System.out.println("Cidade: "+listaImovel.get(i).getEndereco().getCidade());
+					System.out.println("Rua: "+listaImovel.get(i).getEndereco().getRua());
+					System.out.println("Bairro: "+listaImovel.get(i).getEndereco().getBairro());
+					System.out.println("Complemento: "+listaImovel.get(i).getEndereco().getComplemento());
+					//Faz o uso do método getDesricao do enum Categoria
+					System.out.println("Categoria: "+ Categoria.getDescricao(listaImovel.get(i).getCategoria()));
+					//Faz o uso do método getDesricao do enum Tipo
+					System.out.println("Tipo: "+Tipo.getDescricao(listaImovel.get(i).getTipo()));
+					System.out.println("Status: "+listaImovel.get(i).getStatus());
+				}
+				else{
+					System.out.println("Não Existem Imóveis com esse tipo e categoria e cidade e bairro");
+				}
+			}
 		}
 
 	}

@@ -203,14 +203,15 @@ public class Main {
 			/*Menu Módulo Imóvel*/
 			System.out.println("MÓDULO IMÓVEL");
 			System.out.println("1. Cadastrar Imóvel");
-			System.out.println("2. Imprimir Imóveis Por Categoria e Tipo");
-			System.out.println("3. Voltar");
+			System.out.println("2. Imprimir Imóveis Disponiveis Por Categoria e Tipo e cidade");
+			System.out.println("3. Imprimir Imóveis Disponiveis Por Categoria e Tipo e cidade e Bairro ");
+			System.out.println("4. Voltar");
 			/*Tenta Executar o bloco de comandos dentro de try*/
 			try{
 				String input = in.nextLine();
 				op = Integer.parseInt(input);
 				/*Altera o valor de entradaValida, para que saia do loop se a opção digitada estiver no menu*/
-				if(op == 1 ||op == 2 || op == 3){
+				if(op == 1 ||op == 2 || op == 3 || op == 4){
 					entradaValida = true;
 					if(op==1){
 						String cidade,rua, bairro,complemento;
@@ -218,7 +219,7 @@ public class Main {
 						cidade = in.next();
 
 						System.out.println("Informe a Rua do Imóvel");
-						rua = in.next();
+						rua = in.nextLine();
 
 						System.out.println("Informe o Bairro do Imóvel");
 						bairro = in.next();
@@ -279,19 +280,44 @@ public class Main {
 
 						/*Adiciona imóvel na lista de imóvel*/
 						imobiliaria.adicionarImovel(imovel);
+						System.out.println("Imóvel Cadastrado com Sucesso");
 
 					}
 
 					if(op==2){
 						int categoria,tipo;
+						String cidade;
 						System.out.println("Informea categoria do Imóvel1-Residencial/2-Comercial/3-Misto: ");
 						categoria = in.nextInt();
 
-						System.out.println("Informea o tipo do Imóvel:1-Apartamento/2-Casa  ");
+						System.out.println("Informea o tipo do Imóvel:1-Apartamento/2-Casa:  ");
 						tipo = in.nextInt();
+						
+						System.out.println("Informe a Cidade do Imóvel: ");
+						cidade = in.next();
 
-						/*Imprime os imóveis que são da mesma categoria e tipo, informados pelo usuário*/
-						imobiliaria.imprimirImovelPorCategoriaAndTipo(categoria,tipo);
+						/*Imprime os imóveis que são da mesma categoria e tipo e cidade, informados pelo usuário*/
+						imobiliaria.imprimirImovelPorCategoriaAndTipoAndCidade(categoria,tipo,cidade);
+
+					}
+					
+					if(op==3){
+						int categoria,tipo;
+						String cidade,bairro;
+						System.out.println("Informea categoria do Imóvel1-Residencial/2-Comercial/3-Misto: ");
+						categoria = in.nextInt();
+
+						System.out.println("Informea o tipo do Imóvel:1-Apartamento/2-Casa:  ");
+						tipo = in.nextInt();
+						
+						System.out.println("Informe a Cidade do Imóvel: ");
+						cidade = in.next();
+						
+						System.out.println("Informe o bairro Imóvel: ");
+						bairro = in.next();
+
+						/*Imprime os imóveis que são da mesma categoria e tipo e cidade e bairro, informados pelo usuário*/
+						imobiliaria.imprimirImovelPorCategoriaAndTipoAndCidadeAndBairro(categoria,tipo,cidade,bairro);
 
 					}
 				}
