@@ -152,7 +152,7 @@ public class Contrato {
 	 * O objeto funcionário recebido como parâmentro que o contrato receba o objeto do tipo funcionário
 	 * do objeto.
 	 */
-	public void cadastrarFuncionario(Funcionario funcionario){
+	public void setFuncionario(Funcionario funcionario){
 		this.funcionario=funcionario;
 		
 	}
@@ -163,7 +163,7 @@ public class Contrato {
 	 * O objeto imovel recebido como parâmentro que o contrato receba o objeto do tipo imovel
 	 * do objeto.
 	 */
-	public void cadastrarImovel(Imovel imovel){
+	public void setImovel(Imovel imovel){
 		this.imovel=imovel;
 	}
 	

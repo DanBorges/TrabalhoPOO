@@ -418,8 +418,8 @@ public class Main {
 							nomeLocatario = in.next();
 							contrato.setNomeLocatario(nomeLocatario);
 
-							contrato.cadastrarFuncionario(funcionario);
-							contrato.cadastrarImovel(imovel);
+							contrato.setFuncionario(funcionario);
+							contrato.setImovel(imovel);
 
 							/*Chama a funcão para gerar o contrato na classe funcionário*/
 							contrato = funcionario.gerarContrato(contrato,funcionario,imovel);
