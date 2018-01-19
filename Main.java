@@ -38,7 +38,7 @@ public class Main {
 
 			/*Tenta Executar o bloco de comandos dentro de try*/
 			try{
-				String input = in.nextLine();
+				String input = in.next();
 				op = Integer.parseInt(input);
 				/*Altera o valor de entradaValida, para que saia do loop se a opção digitada estiver no menu*/
 				if(op == 1 ||op == 2 || op == 3 || op == 4){
@@ -81,7 +81,7 @@ public class Main {
 
 			/*Tenta Executar o bloco de comandos dentro de try*/
 			try{	
-				String input = in.nextLine();
+				String input = in.next();
 				op = Integer.parseInt(input);
 				/*Altera o valor de entradaValida, para que saia do loop se a opção digitada estiver no menu*/
 				if(op == 1 ||op == 2 || op == 3 || op == 4 || op == 5) {
@@ -208,7 +208,7 @@ public class Main {
 			System.out.println("4. Voltar");
 			/*Tenta Executar o bloco de comandos dentro de try*/
 			try{
-				String input = in.nextLine();
+				String input = in.next();
 				op = Integer.parseInt(input);
 				/*Altera o valor de entradaValida, para que saia do loop se a opção digitada estiver no menu*/
 				if(op == 1 ||op == 2 || op == 3 || op == 4){
@@ -219,7 +219,7 @@ public class Main {
 						cidade = in.next();
 
 						System.out.println("Informe a Rua do Imóvel");
-						rua = in.nextLine();
+						rua = in.next();
 
 						System.out.println("Informe o Bairro do Imóvel");
 						bairro = in.next();
@@ -353,7 +353,7 @@ public class Main {
 			System.out.println("3. Voltar");
 			/*Tenta Executar o bloco de comandos dentro de try*/
 			try{
-				String input = in.nextLine();
+				String input = in.next();
 				op = Integer.parseInt(input);
 				/*Altera o valor de entradaValida, para que saia do loop se a opção digitada estiver no menu*/
 				if(op == 1 ||op == 2 || op == 3){
