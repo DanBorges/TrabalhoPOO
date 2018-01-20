@@ -222,7 +222,7 @@ public class Imovel {
 	 */
 	@Override
 	public String toString() {
-		return "Nome do Proprietario: " + getNomeProprietario() +"\n"
+		return "\n Nome do Proprietario: " + getNomeProprietario() +"\n"
 				+ "categoria: "+ getCategoria() +"\n"
 				+"tipo: " + getTipo()+"\n" 
 				+"Status: " + getStatus()+"\n"

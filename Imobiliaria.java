@@ -142,6 +142,7 @@ public class Imobiliaria {
 					//Faz o uso do método getDesricao do enum Tipo
 					System.out.println("Tipo: "+Tipo.getDescricao(listaImovel.get(i).getTipo()));
 					System.out.println("Status: "+listaImovel.get(i).getStatus());
+					System.out.println("\n");
 				}
 				else{
 					System.out.println("Não Existem Imóveis com esse tipo e categoria e cidade");
@@ -177,6 +178,7 @@ public class Imobiliaria {
 					//Faz o uso do método getDesricao do enum Tipo
 					System.out.println("Tipo: "+Tipo.getDescricao(listaImovel.get(i).getTipo()));
 					System.out.println("Status: "+listaImovel.get(i).getStatus());
+					System.out.println("\n");
 				}
 				else{
 					System.out.println("Não Existem Imóveis com esse tipo e categoria e cidade e bairro");
@@ -217,6 +219,20 @@ public class Imobiliaria {
 			}
 		}
 		throw new RuntimeException("Nao existe nenhum funcionario com esse cpf");
+	}
+	
+	/**
+	 * 
+	 * @param numero, Recebe como parâmetro o numero do Contrato
+	 * Caso ache o contrato pelo seu id retorna o objeto, senão retorna null
+	 */
+	public Contrato rescindirContrato(int numero){
+		for(int i=0; i<listaContrato.size();i++){
+			if(listaContrato.get(i).getNumero() == numero){
+				listaContrato.remove(i);
+			}
+		}
+		return null;
 	}
 
 }

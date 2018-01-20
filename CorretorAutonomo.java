@@ -73,7 +73,7 @@ public class CorretorAutonomo extends Funcionario implements Tributavel {
 				+"\n"+"E-mail: "+getEmail()
 				+"\n"+"Número de Contratos: "+getNumeroContratosFechados()
 				+"\n"+ "CPF: "+getCpf()
-				+"\n"+ "Salário: "+ getRemuneracaoFinal();
+				+"\n"+ "Salário: "+ getRemuneracaoFinal() +"\n";
 	}
 
 }

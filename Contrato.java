@@ -199,6 +199,6 @@ public class Contrato {
 				//Acessa o objeto funcionário e retorna o atributo nome
 				+"Funcionário Responsável: "+ getFuncionario().getNome()+"\n"
 				//Acessa o objeto imovel e retorna o atributo idImovel
-				+"Id do Imóvel: "+getImovel().getIdImovel();
+				+"Id do Imóvel: "+getImovel().getIdImovel() + "\n";
 	}
 }
