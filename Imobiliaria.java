@@ -11,6 +11,7 @@ import br.dcc.ufla.poo.sistemaAlugueisImvoves.Imovel.Tipo;
  * Calsse Responsável por definir, armazenar e capturar informações das entidades do sistema
  *
  */
+
 public class Imobiliaria {	
 	private ArrayList<Funcionario> listaFuncionario;
 	private ArrayList<Imovel> listaImovel;
@@ -120,8 +121,8 @@ public class Imobiliaria {
 	/**
 	 * 
 	 * @param categoria,
-	 * @param tipo
-	 * @param cidade
+	 * @param tipo,
+	 * @param cidade,
 	 * Imprime as caracteristicas de um contrato, passado como parâmetro, senão encontrar imprime que
 	 * Não Existem Imóveis com esse tipo e categoria
 	 */
@@ -144,19 +145,19 @@ public class Imobiliaria {
 					System.out.println("Status: "+listaImovel.get(i).getStatus());
 					System.out.println("\n");
 				}
-				else{
-					System.out.println("Não Existem Imóveis com esse tipo e categoria e cidade");
-				}
 			}
+		}
+		else{
+			System.out.println("Não Existe Nenhum Imóvel no Sistema");
 		}
 	}
 	
 	/**
 	 * 
 	 * @param categoria,
-	 * @param tipo
-	 * @param cidade
-	 * @param bairro
+	 * @param tipo,
+	 * @param cidade,
+	 * @param bairro,
 	 * Imprime as caracteristicas de um contrato, passado como parâmetro, senão encontrar imprime que
 	 * Não Existem Imóveis com esse tipo e categoria
 	 */
@@ -180,10 +181,10 @@ public class Imobiliaria {
 					System.out.println("Status: "+listaImovel.get(i).getStatus());
 					System.out.println("\n");
 				}
-				else{
-					System.out.println("Não Existem Imóveis com esse tipo e categoria e cidade e bairro");
-				}
 			}
+		}
+		else{
+			System.out.println("Não Existe Nenhum Imóvel no Sistema");
 		}
 
 	}
@@ -226,13 +227,12 @@ public class Imobiliaria {
 	 * @param numero, Recebe como parâmetro o numero do Contrato
 	 * Caso ache o contrato pelo seu id retorna o objeto, senão retorna null
 	 */
-	public Contrato rescindirContrato(int numero){
+	public void rescindirContrato(int numero){
 		for(int i=0; i<listaContrato.size();i++){
 			if(listaContrato.get(i).getNumero() == numero){
 				listaContrato.remove(i);
 			}
 		}
-		return null;
 	}
 
 }

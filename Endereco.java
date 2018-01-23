@@ -92,11 +92,5 @@ public class Endereco {
 	public void setComplemento(String complemento) {
 		this.complemento = complemento;
 	}
-	
-
-	
-	
-	
-	
 
 }

@@ -12,10 +12,9 @@ import br.dcc.ufla.poo.sistemaAlugueisImvoves.Imovel.Tipo;
  *
  */
 public class Main {
-
 	/**
 	 * 
-	 * @param in
+	 * @param in recebe entrada do teclado do main
 	 * @return Método que carrega o menu principal, onde o usuário escolhe qual módulo vai acionar
 	 */
 	public static int carregarMenuPrincipal(Scanner in) {
